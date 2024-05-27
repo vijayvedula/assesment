@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      golang: 1.x
+  build:
+    commands:
+      - go mod tidy
+      - go build -o main .
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - main
